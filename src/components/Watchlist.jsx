@@ -3,11 +3,12 @@ import React from "react";
 import MovieCard from "./MovieCard";
 
 const Watchlist = (props) => {
-  const movieDisplay = props.watchlist.map((movie, index) => (
+  const movieDisplay = props.watchList.map((movie, index) => (
     <MovieCard
       key={movie.id}
       movie={movie}
       addMovie={props.addMovie}
+      watchList={props.watchList}
       removeMovie={props.removeMovie}
     />
   ));

@@ -4,7 +4,7 @@ import MovieCard from "./MovieCard";
 
 const MovieScreen = (props) => {
   const decrement = () => {
-    props.setPage(props.page - 1);
+    props.page !== 1 && props.setPage(props.page - 1);
   };
   const increment = () => {
     props.setPage(props.page + 1);
@@ -24,7 +24,7 @@ const MovieScreen = (props) => {
       <h1>Oliver's Movie Theatre</h1>
       <h3>Add a movie to your watchlist</h3>
       <div className="btn-container">
-        <button onClick={props.page !== 1 && decrement}>Previous</button>
+        {props.page > 1 && <button onClick={decrement}>Previous</button>}
         <button onClick={increment}>Next</button>
       </div>
       <div className="movie-container">{movieDisplay}</div>
